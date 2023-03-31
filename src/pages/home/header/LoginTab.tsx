@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import menuUrl from "../../assets/bars.png"
+import menuUrl from "../../../assets/bars.png"
 import { useNavigate } from 'react-router-dom';
-import searchUrl from "../../assets/magnifier.png"
+import searchUrl from "../../../assets/magnifier.png"
 
 export function LoginTab() {
 
@@ -25,12 +25,13 @@ export function LoginTab() {
 }
 
 const Wrapper = styled.div`
-    width: 480px;
     height: 79.3px;
+    width: 25%;
     display: flex;
     position: absolute;
     align-items: center;
     right: 0;
+    top: 0;
     border-left: 1px solid #000000;
 `
 
@@ -41,6 +42,7 @@ const InnerWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-left: 50px;
+    margin-right: 35px;
 `
 
 const TabWrapper = styled.div`

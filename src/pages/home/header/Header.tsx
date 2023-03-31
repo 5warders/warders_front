@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import image from '../../assets/Black_Umbrella.png'
+import image from '../../../assets/Black_Umbrella.png'
 import { LoginTab } from "./LoginTab";
+
 export function Header() {
 
     return (
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
     width: 100%;   
     height: 79.3px;
     border-bottom: 1px solid #000000;
+    display: grid;
 `
 
 const Title = styled.img`
