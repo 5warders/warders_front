@@ -1,15 +1,16 @@
 import styled from "styled-components"
 import { UserProfile } from "./UserProfile";
-
 interface ProfileProps {
     url?: string;
+    description: string;
 }
-export function Profile({ url = './36.png' }: ProfileProps) {
+
+export function Profile({ url, description }: ProfileProps) {
     return (
         <Wrapper>
             <Img src={url} />
             <UserProfile />
-            <Description>Description</Description>
+            <Description>{description}</Description>
         </Wrapper>
     )
 }
@@ -26,7 +27,6 @@ const Img = styled.img`
     width: 90%;
     height: 471px;
     object-fit: contain;
-    background-color: black;
 `
 
 
