@@ -63,7 +63,7 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
 
     useEffect(() => {
         const options = {
-            threshold: 0.8,
+            threshold: 0.3,
         };
 
         const observer = new IntersectionObserver((entries) => {
