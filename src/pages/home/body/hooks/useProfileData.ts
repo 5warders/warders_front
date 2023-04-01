@@ -55,21 +55,24 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
         } finally {
             setLoading(false);
         }
-    }, [page]);
+    }, [page, totalPage]);
 
     useEffect(() => {
         fetchData();
     }, [fetchData]);
 
+
     useEffect(() => {
         const options = {
-            threshold: 0.3,
+            threshold: 0.5,
         };
 
         const observer = new IntersectionObserver((entries) => {
+            console.log(entries[0].intersectionRatio, entries[0].intersectionRect,);
             if (entries[0].isIntersecting) {
-                setPage(prevPage => prevPage + 1);
+                setPage((prevPage) => prevPage = prevPage + 1);
             }
+
         }, options);
 
         if (targetRef.current) {
@@ -82,7 +85,7 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
             }
         };
 
-    }, [targetRef]);
+    }, []);
 
     return { data, loading, error };
 }
