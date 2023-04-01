@@ -35,7 +35,7 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
             const response = await axios.get<Profile>('http://49.50.163.154:8080/v1/profiles', {
                 params: {
                     page,
-                    size: 8,
+                    size: 50,
                     sort: 'desc',
                 },
             });
@@ -68,11 +68,9 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
         };
 
         const observer = new IntersectionObserver((entries) => {
-            console.log(entries[0].intersectionRatio, entries[0].intersectionRect,);
             if (entries[0].isIntersecting) {
-                setPage((prevPage) => prevPage = prevPage + 1);
+                setPage((prevPage) => prevPage + 1);
             }
-
         }, options);
 
         if (targetRef.current) {
