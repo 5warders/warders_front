@@ -3,13 +3,14 @@ import { UserProfile } from "./UserProfile";
 interface ProfileProps {
     url?: string;
     description: string;
+    userName: string;
 }
 
-export function Profile({ url, description }: ProfileProps) {
+export function Profile({ url, description, userName }: ProfileProps) {
     return (
         <Wrapper>
             <Img src={url} />
-            <UserProfile />
+            <UserProfile userName={userName} />
             <Description>{description}</Description>
         </Wrapper>
     )

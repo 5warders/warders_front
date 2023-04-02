@@ -7,6 +7,7 @@ interface Profile {
         description: string;
         userId: string;
         imageUrl: string;
+        userName: string;
     }[];
     totalPages: number;
 }
@@ -15,6 +16,7 @@ interface ProfileContent {
     profileId: number;
     description: string;
     imageUrl: string;
+    userName: string;
 }
 
 export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
@@ -36,16 +38,17 @@ export function useProfileData(targetRef: React.RefObject<HTMLDivElement>) {
                 params: {
                     page,
                     size: 50,
-                    sort: 'desc',
+                    sort: 'profileId,DESC',
                 },
             });
 
             totalPage.current = response.data.totalPages;
 
-            const newData = response.data.content.map(({ profileId, description, imageUrl }) => ({
+            const newData = response.data.content.map(({ profileId, description, imageUrl, userName }) => ({
                 profileId,
                 description,
                 imageUrl,
+                userName
             }));
 
             setData(prevData => [...prevData, ...newData]);

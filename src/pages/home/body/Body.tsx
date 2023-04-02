@@ -17,7 +17,7 @@ export function Body() {
             <Wrapper>
                 <ProfileTable>
                     {data.map((profileContent, idx) => {
-                        return (<Profile key={'profile_' + idx} url={profileContent.imageUrl} description={profileContent.description}></Profile>)
+                        return (<Profile key={'profile_' + idx} userName={profileContent.userName} url={profileContent.imageUrl} description={profileContent.description}></Profile>)
                     })}
                 </ProfileTable>
                 <End ref={targetRef}></End>

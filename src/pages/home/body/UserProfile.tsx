@@ -1,12 +1,16 @@
 import styled from "styled-components"
 import heartUrl from "./heart.png"
 
-export function UserProfile() {
+interface UserProfileProps {
+    userName: string;
+}
+
+export function UserProfile({ userName }: UserProfileProps) {
     return (
         <Wrapper>
             <UserInfo>
                 <UserImg />
-                <UserName>USER NAME</UserName>
+                <UserName>{userName}</UserName>
             </UserInfo>
             <Heart src={heartUrl} />
         </Wrapper>
