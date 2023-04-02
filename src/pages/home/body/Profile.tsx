@@ -22,11 +22,12 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 566px;
 `
 
 const Img = styled.img`
-    width: 90%;
-    height: 471px;
+    width: 416px;
+    height: 416px;
     object-fit: contain;
 `
 
